@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 #import "YourNameViewController.h"
+#import <OneSignal/OneSignal.h>
 
 @interface AppDelegate ()
 
@@ -29,7 +30,24 @@
     
     UINavigationController *navcontroller = [[UINavigationController alloc] initWithRootViewController:[[YourNameViewController alloc] init]];
     self.window.rootViewController = navcontroller;
-    return YES;
+
+    // Replace '11111111-2222-3333-4444-0123456789ab' with your OneSignal App ID.
+    [OneSignal initWithLaunchOptions:launchOptions
+                               appId:@"de80b29b-14a9-4bf9-9b63-f30eb1c4aba6"
+            handleNotificationAction:nil
+                            settings:@{kOSSettingsKeyAutoPrompt: @false}];
+    OneSignal.inFocusDisplayType = OSNotificationDisplayTypeNotification;
+    
+    // Recommend moving the below line to prompt for push after informing the user about
+    //   how your app will use them.
+    [OneSignal promptForPushNotificationsWithUserResponse:^(BOOL accepted) {
+        NSLog(@"User accepted notifications: %d", accepted);
+    }];
+    
+    // Call syncHashedEmail anywhere in your iOS app if you have the user's email.
+    // This improves the effectiveness of OneSignal's "best-time" notification scheduling feature.
+    // [OneSignal syncHashedEmail:userEmail];
+    
     return YES;
 }
 

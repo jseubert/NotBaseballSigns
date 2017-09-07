@@ -7,11 +7,21 @@
 		<key>NotBaseballSigns.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
+		</dict>
+		<key>OneSignalNotificationServiceExtension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>9545C0BF1F60EE8300CEFE9C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>9578D9F81F60B6F100285F72</key>
 		<dict>
 			<key>primary</key>
