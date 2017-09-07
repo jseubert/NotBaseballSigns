@@ -26,13 +26,13 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.title = @"Send a Sign";
-    
+    self.view.backgroundColor = [UIColor collectionViewBackgroundColor];
     UICollectionViewFlowLayout *collectionViewFlowLayout = [[UICollectionViewFlowLayout alloc] init];
-    collectionViewFlowLayout.minimumLineSpacing = 5;
-    collectionViewFlowLayout.minimumInteritemSpacing = 5;
-    collectionViewFlowLayout.sectionInset = UIEdgeInsetsMake(0, 0, 5, 0);
+    //collectionViewFlowLayout.minimumLineSpacing = 5;
+    //collectionViewFlowLayout.minimumInteritemSpacing = 5;
+    collectionViewFlowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 0, 10);
     
     self.collectionView = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:collectionViewFlowLayout];
     self.collectionView.dataSource = self;
@@ -45,6 +45,12 @@
     [self.view addSubview:self.collectionView];
 }
 
+- (void)viewDidLayoutSubviews {
+    CGFloat padding = 10;
+    [super viewDidLayoutSubviews];
+    self.collectionView.frame = CGRectMake(padding, 0, self.view.width - (padding*2), self.view.height);
+}
+
 #pragma mark -
 #pragma mark UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -55,10 +61,11 @@
 
 
 
+
 #pragma mark -
 #pragma mark UICollectionViewDataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 5;
+    return 50;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
