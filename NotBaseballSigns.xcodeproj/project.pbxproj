@@ -1,0 +1,455 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9578D9FE1F60B6F100285F72 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9578D9FD1F60B6F100285F72 /* main.m */; };
+		9578DA011F60B6F100285F72 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9578DA001F60B6F100285F72 /* AppDelegate.m */; };
+		9578DA041F60B6F100285F72 /* InputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9578DA031F60B6F100285F72 /* InputViewController.m */; };
+		9578DA091F60B6F100285F72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9578DA081F60B6F100285F72 /* Assets.xcassets */; };
+		9578DA0C1F60B6F100285F72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9578DA0A1F60B6F100285F72 /* LaunchScreen.storyboard */; };
+		9578DA1C1F60B72B00285F72 /* JSBaseFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578DA191F60B70000285F72 /* JSBaseFramework.framework */; };
+		9578DA1D1F60B73200285F72 /* JSBaseFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9578DA191F60B70000285F72 /* JSBaseFramework.framework */; };
+		9578DA1E1F60B73200285F72 /* JSBaseFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9578DA191F60B70000285F72 /* JSBaseFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9578DA281F60C2B000285F72 /* YourNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9578DA271F60C2B000285F72 /* YourNameViewController.m */; };
+		9578DA2B1F60C30700285F72 /* TargetNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9578DA2A1F60C30700285F72 /* TargetNameViewController.m */; };
+		9578DA2E1F60C6DB00285F72 /* SelectSignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9578DA2D1F60C6DB00285F72 /* SelectSignViewController.m */; };
+		9578DA311F60C87D00285F72 /* SignCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9578DA301F60C87D00285F72 /* SignCollectionViewCell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9578DA181F60B70000285F72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9578DA131F60B6FF00285F72 /* JSBaseFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9575BD561F5F8C5000ADF929;
+			remoteInfo = JSBaseFramework;
+		};
+		9578DA1A1F60B70000285F72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9578DA131F60B6FF00285F72 /* JSBaseFramework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9575BD5F1F5F8C5000ADF929;
+			remoteInfo = JSBaseFrameworkTests;
+		};
+		9578DA1F1F60B73200285F72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9578DA131F60B6FF00285F72 /* JSBaseFramework.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9575BD551F5F8C5000ADF929;
+			remoteInfo = JSBaseFramework;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9578DA211F60B73200285F72 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9578DA1E1F60B73200285F72 /* JSBaseFramework.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9578D9F91F60B6F100285F72 /* NotBaseballSigns.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotBaseballSigns.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9578D9FD1F60B6F100285F72 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9578D9FF1F60B6F100285F72 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9578DA001F60B6F100285F72 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9578DA021F60B6F100285F72 /* InputViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputViewController.h; sourceTree = "<group>"; };
+		9578DA031F60B6F100285F72 /* InputViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputViewController.m; sourceTree = "<group>"; };
+		9578DA081F60B6F100285F72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9578DA0B1F60B6F100285F72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9578DA0D1F60B6F100285F72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9578DA131F60B6FF00285F72 /* JSBaseFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JSBaseFramework.xcodeproj; path = ../JSBaseFramework/JSBaseFramework.xcodeproj; sourceTree = "<group>"; };
+		9578DA261F60C2B000285F72 /* YourNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YourNameViewController.h; sourceTree = "<group>"; };
+		9578DA271F60C2B000285F72 /* YourNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YourNameViewController.m; sourceTree = "<group>"; };
+		9578DA291F60C30700285F72 /* TargetNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TargetNameViewController.h; sourceTree = "<group>"; };
+		9578DA2A1F60C30700285F72 /* TargetNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetNameViewController.m; sourceTree = "<group>"; };
+		9578DA2C1F60C6DB00285F72 /* SelectSignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectSignViewController.h; sourceTree = "<group>"; };
+		9578DA2D1F60C6DB00285F72 /* SelectSignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectSignViewController.m; sourceTree = "<group>"; };
+		9578DA2F1F60C87D00285F72 /* SignCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignCollectionViewCell.h; sourceTree = "<group>"; };
+		9578DA301F60C87D00285F72 /* SignCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignCollectionViewCell.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9578D9F61F60B6F100285F72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9578DA1C1F60B72B00285F72 /* JSBaseFramework.framework in Frameworks */,
+				9578DA1D1F60B73200285F72 /* JSBaseFramework.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9578D9F01F60B6F100285F72 = {
+			isa = PBXGroup;
+			children = (
+				9578DA131F60B6FF00285F72 /* JSBaseFramework.xcodeproj */,
+				9578D9FB1F60B6F100285F72 /* NotBaseballSigns */,
+				9578D9FA1F60B6F100285F72 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9578D9FA1F60B6F100285F72 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9578D9F91F60B6F100285F72 /* NotBaseballSigns.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9578D9FB1F60B6F100285F72 /* NotBaseballSigns */ = {
+			isa = PBXGroup;
+			children = (
+				9578DA371F60CA1300285F72 /* Views */,
+				9578DA361F60CA0600285F72 /* VIewControllers */,
+				9578D9FF1F60B6F100285F72 /* AppDelegate.h */,
+				9578DA001F60B6F100285F72 /* AppDelegate.m */,
+				9578DA081F60B6F100285F72 /* Assets.xcassets */,
+				9578DA0A1F60B6F100285F72 /* LaunchScreen.storyboard */,
+				9578DA0D1F60B6F100285F72 /* Info.plist */,
+				9578D9FC1F60B6F100285F72 /* Supporting Files */,
+			);
+			path = NotBaseballSigns;
+			sourceTree = "<group>";
+		};
+		9578D9FC1F60B6F100285F72 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9578D9FD1F60B6F100285F72 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9578DA141F60B6FF00285F72 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9578DA191F60B70000285F72 /* JSBaseFramework.framework */,
+				9578DA1B1F60B70000285F72 /* JSBaseFrameworkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9578DA361F60CA0600285F72 /* VIewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9578DA021F60B6F100285F72 /* InputViewController.h */,
+				9578DA031F60B6F100285F72 /* InputViewController.m */,
+				9578DA261F60C2B000285F72 /* YourNameViewController.h */,
+				9578DA271F60C2B000285F72 /* YourNameViewController.m */,
+				9578DA291F60C30700285F72 /* TargetNameViewController.h */,
+				9578DA2A1F60C30700285F72 /* TargetNameViewController.m */,
+				9578DA2C1F60C6DB00285F72 /* SelectSignViewController.h */,
+				9578DA2D1F60C6DB00285F72 /* SelectSignViewController.m */,
+			);
+			name = VIewControllers;
+			sourceTree = "<group>";
+		};
+		9578DA371F60CA1300285F72 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9578DA2F1F60C87D00285F72 /* SignCollectionViewCell.h */,
+				9578DA301F60C87D00285F72 /* SignCollectionViewCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9578D9F81F60B6F100285F72 /* NotBaseballSigns */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9578DA101F60B6F100285F72 /* Build configuration list for PBXNativeTarget "NotBaseballSigns" */;
+			buildPhases = (
+				9578D9F51F60B6F100285F72 /* Sources */,
+				9578D9F61F60B6F100285F72 /* Frameworks */,
+				9578D9F71F60B6F100285F72 /* Resources */,
+				9578DA211F60B73200285F72 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9578DA201F60B73200285F72 /* PBXTargetDependency */,
+			);
+			name = NotBaseballSigns;
+			productName = NotBaseballSigns;
+			productReference = 9578D9F91F60B6F100285F72 /* NotBaseballSigns.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9578D9F11F60B6F100285F72 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "John Seubert";
+				TargetAttributes = {
+					9578D9F81F60B6F100285F72 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = UZJ8754DYA;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 9578D9F41F60B6F100285F72 /* Build configuration list for PBXProject "NotBaseballSigns" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9578D9F01F60B6F100285F72;
+			productRefGroup = 9578D9FA1F60B6F100285F72 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9578DA141F60B6FF00285F72 /* Products */;
+					ProjectRef = 9578DA131F60B6FF00285F72 /* JSBaseFramework.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				9578D9F81F60B6F100285F72 /* NotBaseballSigns */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		9578DA191F60B70000285F72 /* JSBaseFramework.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = JSBaseFramework.framework;
+			remoteRef = 9578DA181F60B70000285F72 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9578DA1B1F60B70000285F72 /* JSBaseFrameworkTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = JSBaseFrameworkTests.xctest;
+			remoteRef = 9578DA1A1F60B70000285F72 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9578D9F71F60B6F100285F72 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9578DA0C1F60B6F100285F72 /* LaunchScreen.storyboard in Resources */,
+				9578DA091F60B6F100285F72 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9578D9F51F60B6F100285F72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9578DA2B1F60C30700285F72 /* TargetNameViewController.m in Sources */,
+				9578DA041F60B6F100285F72 /* InputViewController.m in Sources */,
+				9578DA011F60B6F100285F72 /* AppDelegate.m in Sources */,
+				9578DA281F60C2B000285F72 /* YourNameViewController.m in Sources */,
+				9578D9FE1F60B6F100285F72 /* main.m in Sources */,
+				9578DA2E1F60C6DB00285F72 /* SelectSignViewController.m in Sources */,
+				9578DA311F60C87D00285F72 /* SignCollectionViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9578DA201F60B73200285F72 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JSBaseFramework;
+			targetProxy = 9578DA1F1F60B73200285F72 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9578DA0A1F60B6F100285F72 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9578DA0B1F60B6F100285F72 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9578DA0E1F60B6F100285F72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/../JSBaseFramework/JSBaseFramework",
+					"$(PROJECT_DIR)/../JSBaseFramework",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../JSBaseFramework",
+					"$(PROJECT_DIR)/../JSBaseFramework/JSBaseFramework",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9578DA0F1F60B6F100285F72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/../JSBaseFramework/JSBaseFramework",
+					"$(PROJECT_DIR)/../JSBaseFramework",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../JSBaseFramework",
+					"$(PROJECT_DIR)/../JSBaseFramework/JSBaseFramework",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9578DA111F60B6F100285F72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = UZJ8754DYA;
+				INFOPLIST_FILE = NotBaseballSigns/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.seubjoh.NotBaseballSigns;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9578DA121F60B6F100285F72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = UZJ8754DYA;
+				INFOPLIST_FILE = NotBaseballSigns/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.seubjoh.NotBaseballSigns;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9578D9F41F60B6F100285F72 /* Build configuration list for PBXProject "NotBaseballSigns" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9578DA0E1F60B6F100285F72 /* Debug */,
+				9578DA0F1F60B6F100285F72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9578DA101F60B6F100285F72 /* Build configuration list for PBXNativeTarget "NotBaseballSigns" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9578DA111F60B6F100285F72 /* Debug */,
+				9578DA121F60B6F100285F72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9578D9F11F60B6F100285F72 /* Project object */;
+}
