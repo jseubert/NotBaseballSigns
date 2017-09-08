@@ -28,6 +28,7 @@
     
     self.descriptionLabel = [[UILabel alloc] init];
     self.descriptionLabel.textAlignment = NSTextAlignmentCenter;
+    self.descriptionLabel.numberOfLines = 0;
     [self.view addSubview:self.descriptionLabel];
     
     self.textField = [[UITextField alloc] init];
