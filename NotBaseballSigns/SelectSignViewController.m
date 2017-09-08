@@ -5,6 +5,7 @@
 //  Created by John  Seubert on 9/6/17.
 //  Copyright © 2017 John Seubert. All rights reserved.
 //
+#import <CloudKit/CloudKit.h>
 
 #import "SelectSignViewController.h"
 #import "SignCollectionViewCell.h"
@@ -55,7 +56,23 @@
 #pragma mark UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 
-    [self showErrorAlertWithTitle:@"Send?" message:@"Sending"];
+    
+    CKRecordID *recordID = [[CKRecordID alloc] initWithRecordName:[[NSUserDefaults standardUserDefaults] stringForKey:@"TargetNameKey"]];
+    CKDatabase *publicDatabase = [[CKContainer defaultContainer] publicCloudDatabase];
+    [publicDatabase fetchRecordWithID:recordID completionHandler:^(CKRecord *recordReturned, NSError *error) {
+        if (error) {
+            // Error handling for failed fetch from public database
+        }
+        else {
+            // Modify the record and save it to the database
+            [recordReturned setObject:@"Worked!" forKey:@"message"];
+            [publicDatabase saveRecord:recordReturned completionHandler:^(CKRecord *savedRecord, NSError *saveError) {
+                // Error handling for failed save to public database
+                [self showErrorAlertWithTitle:@"WHEE" message:@"Sending"];
+            }];
+        }
+    }];
+
 }
 
 

@@ -8,6 +8,8 @@
 
 #import "TargetNameViewController.h"
 #import "SelectSignViewController.h"
+#import <CloudKit/CloudKit.h>
+#import <UIViewController+Alerts.h>
 
 NSString * const TargetNameKey = @"TargetNameKey";
 
@@ -30,8 +32,29 @@ NSString * const TargetNameKey = @"TargetNameKey";
 
 
 - (void)nextVC:(BOOL)animated {
-    SelectSignViewController *vc = [[SelectSignViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:animated];
+    CKRecordID *recordID = [[CKRecordID alloc] initWithRecordName:[[NSUserDefaults standardUserDefaults] stringForKey:self.keyString]];
+    CKDatabase *publicDatabase = [[CKContainer defaultContainer] publicCloudDatabase];
+    [publicDatabase fetchRecordWithID:recordID completionHandler:^(CKRecord *recordReturned, NSError *error) {
+        if (error) {
+            if(error.code == 11) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+
+                    [self showErrorAlertWithTitle:@"Whoops" message:@"No Coach with that name"];
+                });
+            } else {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self showErrorAlertView:error];
+                });
+            }
+
+        } else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                SelectSignViewController *vc = [[SelectSignViewController alloc] init];
+                [self.navigationController pushViewController:vc animated:animated];
+            });
+        }
+    }];
+
 }
 
 @end

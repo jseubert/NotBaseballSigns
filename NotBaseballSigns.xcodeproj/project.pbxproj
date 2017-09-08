@@ -36,6 +36,7 @@
 		95B9F0241F60D7360049745A /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95B9F0211F60D7360049745A /* NotificationCenter.framework */; };
 		95B9F0251F60D7360049745A /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95B9F0221F60D7360049745A /* UserNotifications.framework */; };
 		95B9F0261F60D7360049745A /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95B9F0231F60D7360049745A /* UserNotificationsUI.framework */; };
+		95DF21491F62244300849AE8 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DF21481F62244300849AE8 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		95B9F0211F60D7360049745A /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		95B9F0221F60D7360049745A /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		95B9F0231F60D7360049745A /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		95DF21481F62244300849AE8 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				95B9F0241F60D7360049745A /* NotificationCenter.framework in Frameworks */,
 				95B9F0251F60D7360049745A /* UserNotifications.framework in Frameworks */,
 				95B9F0261F60D7360049745A /* UserNotificationsUI.framework in Frameworks */,
+				95DF21491F62244300849AE8 /* CloudKit.framework in Frameworks */,
 				95B9F01F1F60D4640049745A /* libsqlite3.tbd in Frameworks */,
 				95B9F01D1F60D45C0049745A /* libz.tbd in Frameworks */,
 				95B9F0101F60D23D0049745A /* FirebaseNanoPB.framework in Frameworks */,
@@ -235,6 +238,7 @@
 		95B9F01B1F60D45C0049745A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95DF21481F62244300849AE8 /* CloudKit.framework */,
 				95B9F0211F60D7360049745A /* NotificationCenter.framework */,
 				95B9F0221F60D7360049745A /* UserNotifications.framework */,
 				95B9F0231F60D7360049745A /* UserNotificationsUI.framework */,
@@ -281,6 +285,9 @@
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
 								enabled = 1;
 							};
 						};
