@@ -40,15 +40,18 @@ NSString * const TargetNameKey = @"TargetNameKey";
                 dispatch_async(dispatch_get_main_queue(), ^{
 
                     [self showErrorAlertWithTitle:@"Whoops" message:@"No Coach with that name"];
+                    [self loading:NO];
                 });
             } else {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [self showErrorAlertView:error];
+                    [self loading:NO];
                 });
             }
 
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
+                [self loading:NO];
                 SelectSignViewController *vc = [[SelectSignViewController alloc] init];
                 [self.navigationController pushViewController:vc animated:animated];
             });

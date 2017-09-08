@@ -30,8 +30,7 @@ NSString * const CurrentNameKey = @"CurrentNameKey";
 }
 
 - (void)nextVC:(BOOL)animated {
-
-    
+    //Setup iCloud
     [[CKContainer defaultContainer] accountStatusWithCompletionHandler:^(CKAccountStatus accountStatus, NSError *error) {
         if (accountStatus == CKAccountStatusNoAccount) {
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Sign in to iCloud"
@@ -41,6 +40,7 @@ NSString * const CurrentNameKey = @"CurrentNameKey";
                                                       style:UIAlertActionStyleCancel
                                                     handler:nil]];
             [self presentViewController:alert animated:YES completion:nil];
+            [self loading:NO];
         }
         else {
             [self addNameToICloud:animated];
@@ -52,6 +52,7 @@ NSString * const CurrentNameKey = @"CurrentNameKey";
 - (void)addNameToICloud:(BOOL)animated {
     CKRecordID *recordID = [[CKRecordID alloc] initWithRecordName:[[NSUserDefaults standardUserDefaults] stringForKey:self.keyString]];
     CKDatabase *publicDatabase = [[CKContainer defaultContainer] publicCloudDatabase];
+    
     [publicDatabase fetchRecordWithID:recordID completionHandler:^(CKRecord *recordReturned, NSError *error) {
         if (error) {
             //No record found add it
@@ -66,12 +67,7 @@ NSString * const CurrentNameKey = @"CurrentNameKey";
                 CKContainer *myContainer = [CKContainer defaultContainer];
                 CKDatabase *publicDatabase = [myContainer publicCloudDatabase];
                 [publicDatabase saveRecord:record completionHandler:^(CKRecord *artworkRecord, NSError *error){
-                    [self subscribe];
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        // Insert successfully saved record code
-                        TargetNameViewController *vc = [[TargetNameViewController alloc] init];
-                        [self.navigationController pushViewController:vc animated:animated];
-                    });
+                    [self subscribe:animated];
                     if (error) {
                         // Insert error handling
                         return;
@@ -81,12 +77,7 @@ NSString * const CurrentNameKey = @"CurrentNameKey";
                 
             }
         } else {
-            [self subscribe];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                // Insert successfully saved record code
-                TargetNameViewController *vc = [[TargetNameViewController alloc] init];
-                [self.navigationController pushViewController:vc animated:animated];
-            });
+            [self subscribe:animated];
         }
     }];
 
@@ -94,7 +85,7 @@ NSString * const CurrentNameKey = @"CurrentNameKey";
 
 }
 
-- (void)subscribe {
+- (void)subscribe:(BOOL)animated {
     CKDatabase *publicDatabase = [[CKContainer defaultContainer] publicCloudDatabase];
     //Remove Old Subsriptions
     [publicDatabase fetchAllSubscriptionsWithCompletionHandler:^(NSArray<CKSubscription *> * _Nullable subscriptions, NSError * _Nullable error) {
@@ -102,32 +93,36 @@ NSString * const CurrentNameKey = @"CurrentNameKey";
         for(CKSubscription *subscription in subscriptions) {
             [subscriptionIDs addObject:subscription.subscriptionID];
         }
-        CKModifySubscriptionsOperation *operation = [[CKModifySubscriptionsOperation alloc] initWithSubscriptionsToSave:nil subscriptionIDsToDelete:subscriptionIDs];
+        
+        //
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"coachID = %@", [[NSUserDefaults standardUserDefaults] stringForKey:self.keyString]];
+        
+        CKSubscription *subscription = [[CKQuerySubscription alloc] initWithRecordType:@"Name"
+                                                                             predicate:predicate
+                                                                               options:CKQuerySubscriptionOptionsFiresOnRecordUpdate];
+        
+        CKNotificationInfo *notificationInfo = [[CKNotificationInfo alloc] init];
+        notificationInfo.alertBody = @"Speedie Quick Pitch";
+        notificationInfo.alertLaunchImage = @"OverviewTabBarIcon";
+        notificationInfo.shouldBadge = NO;
+        notificationInfo.desiredKeys = @[@"message"];
+        
+        subscription.notificationInfo = notificationInfo;
+        
+        
+        
+        CKModifySubscriptionsOperation *operation = [[CKModifySubscriptionsOperation alloc] initWithSubscriptionsToSave:@[subscription] subscriptionIDsToDelete:subscriptionIDs];
         operation.allowsCellularAccess = YES;
         operation.qualityOfService = NSQualityOfServiceDefault;
         operation.modifySubscriptionsCompletionBlock = ^(NSArray<CKSubscription *> * _Nullable savedSubscriptions, NSArray<NSString *> * _Nullable deletedSubscriptionIDs, NSError * _Nullable operationError) {
-            //CKRecordID *recordID = [[CKRecordID alloc] initWithRecordName:[[NSUserDefaults standardUserDefaults] stringForKey:self.keyString]];
-            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"coachID = %@", [[NSUserDefaults standardUserDefaults] stringForKey:self.keyString]];
-            
-            CKSubscription *subscription = [[CKQuerySubscription alloc] initWithRecordType:@"Name"
-                                                                                 predicate:predicate
-                                                                                   options:CKQuerySubscriptionOptionsFiresOnRecordUpdate];
-            
-            CKNotificationInfo *notificationInfo = [CKNotificationInfo new];
-            notificationInfo.alertLocalizationKey = @"WOWWOWOWOW";
-            notificationInfo.shouldBadge = NO;
-            notificationInfo.desiredKeys = @[@"message"];
-            
-            subscription.notificationInfo = notificationInfo;
-            
-            [publicDatabase saveSubscription:subscription
-                           completionHandler:^(CKSubscription *subscription, NSError *error) {
-                               if (error) {
-                                   // insert error handling
-                               }
-                           }];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self loading:NO];
+                // Insert successfully saved record code
+                TargetNameViewController *vc = [[TargetNameViewController alloc] init];
+                [self.navigationController pushViewController:vc animated:animated];
+            });
+
         };
-        
         [publicDatabase addOperation:operation];
     }];
 }

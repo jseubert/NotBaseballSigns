@@ -15,6 +15,9 @@
 
 @interface InputViewController () <UITextFieldDelegate>
 
+@property (nonatomic, strong) UIActivityIndicatorView *activityIndicator;
+
+
 @end
 
 @implementation InputViewController
@@ -44,6 +47,12 @@
     [self.submitButton addTarget:self action:@selector(tappedSubmitButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.submitButton];
     
+    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    [self.activityIndicator sizeToFit];
+    self.activityIndicator.hidesWhenStopped = YES;
+    self.activityIndicator.color = [UIColor darkGrayColor];
+    [self.view addSubview:self.activityIndicator];
+    
     NSString *currentName = [[NSUserDefaults standardUserDefaults] stringForKey:self.keyString];
     if(currentName && currentName.length > 0) {
         self.textField.text = currentName;
@@ -52,14 +61,27 @@
     
 }
 
+- (void)loading:(BOOL)loading {
+    if(loading) {
+        [self.activityIndicator startAnimating];
+    } else {
+        [self.activityIndicator stopAnimating];
+    }
+    self.submitButton.userInteractionEnabled = !loading;
+    self.textField.userInteractionEnabled = !loading;
+    self.navigationItem.rightBarButtonItem.enabled = !loading;
+}
+
 
 - (void)tappedSubmitButton:(UIButton *)sender {
+    [self loading:YES];
     NSString *name = self.textField.text;
     if(name && name.length > 0) {
         [self.textField resignFirstResponder];
-        [[NSUserDefaults standardUserDefaults] setObject:name forKey:self.keyString];
+        [[NSUserDefaults standardUserDefaults] setObject:[name lowercaseString] forKey:self.keyString];
         [self nextVC:YES];
     } else {
+        [self loading:NO];
         [self showErrorAlertWithTitle:@"Error" message:@"Enter a valid name"];
     }
 }
@@ -86,10 +108,19 @@
     
     textSize = [self.submitButton.titleLabel sizeOfLabelWithWithWidth:self.view.width - padding*2];
     self.submitButton.frame = CGRectMake(padding, y, self.view.width - padding*2, textSize.height + padding*2);
+    
+    self.activityIndicator.center = self.view.center;
 }
 
 
 - (BOOL)textField:(UITextField *) textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    if ([string rangeOfCharacterFromSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]].location != NSNotFound) {
+        return NO;
+    }
+    
+    if([string rangeOfCharacterFromSet:[[NSCharacterSet alphanumericCharacterSet] invertedSet]].location != NSNotFound) {
+        return NO;
+    }
     
     NSUInteger oldLength = [textField.text length];
     NSUInteger replacementLength = [string length];

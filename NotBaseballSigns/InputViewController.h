@@ -15,5 +15,8 @@
 @property (nonatomic, strong) UIButton *submitButton;
 
 @property (nonatomic, strong) NSString *keyString;
+
+-(void)loading:(BOOL)loading;
+
 @end
 
